@@ -1,2 +1,2 @@
-# rmhmakan
+# rumahmakan
 Software rumah makan ~
