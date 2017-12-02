@@ -6,6 +6,7 @@
   <link href="assets/css/bootstrap.css" rel="stylesheet">
   <link href="assets/css/custom.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="icon" href="assets/images/food_logo.ico" type="image/icon">
   
 <style>
  .no-border-radius {
@@ -48,11 +49,13 @@
   color:black;
  }
 </style>
+<title>KARYAWAN &mdash; RUMAHMAKAN</title>
 </head>
 <body>
 <div class="login-box">
- <div class="login-header text-center">
-      <a href='#'><i class="fa fa-user"></i> <b>LOGIN</b> KARYAWAN</a>
+ <div class="login-header text-center"> <center>
+  <img src="assets/images/food_logo.png" class="img img-responsive" style="width: 20%; height: 20%;">
+</center><b>LOGIN</b> KARYAWAN</a>
  </div>
  <div class="login-body">
   <form action="#" method="POST">
