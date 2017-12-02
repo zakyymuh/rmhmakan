@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="assets/css/bootstrap.css" rel="stylesheet">
   <link href="assets/css/custom.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   
 <style>
  .no-border-radius {
@@ -27,6 +27,9 @@
   height: 40px;
   color:black;
  }
+ .login-box {
+  padding: 30px 15px 5px 15px !important;
+ }
  .login-box span {
   font-size: 20px;
  }
@@ -37,6 +40,9 @@
   padding:5px 15px 5px 15px;
   font-size: 20px;
   width: 130px;
+ }
+ .box-footer span {
+  font-size:12px;
  }
  .fa {
   color:black;
@@ -64,12 +70,16 @@
   </div>
 <div class="box-footer text-center">
   <div>
-                    <button type="submit" class="btn btn-primary " name='submit' value='masuk'>MASUK
-          </button>
-          
+  <button type="submit" class="btn btn-primary " name='submit' value='masuk'>MASUK</button>
+          <br>
+          <br>
+          <br>
+          <small>
+            
+            <span class="small text-muted">&copy RUMAHMAKAN 2017 - 2018. All right reserved.</span>
+          </small>
                   </div>
                   </div>
-  
  </form>
  </div>
 </div>
