@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="assets/css/bootstrap.css" rel="stylesheet">
   <link href="assets/css/custom.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="icon" href="assets/images/food_logo.ico" type="image/icon">
   
 <style>
  .no-border-radius {
@@ -27,6 +28,9 @@
   height: 40px;
   color:black;
  }
+ .login-box {
+  padding: 30px 15px 5px 15px !important;
+ }
  .login-box span {
   font-size: 20px;
  }
@@ -38,15 +42,20 @@
   font-size: 20px;
   width: 130px;
  }
+ .box-footer span {
+  font-size:12px;
+ }
  .fa {
   color:black;
  }
 </style>
+<title>KARYAWAN &mdash; RUMAHMAKAN</title>
 </head>
 <body>
 <div class="login-box">
- <div class="login-header text-center">
-      <a href='#'><i class="fa fa-user"></i> <b>LOGIN</b> KARYAWAN</a>
+ <div class="login-header text-center"> <center>
+  <img src="assets/images/food_logo.png" class="img img-responsive" style="width: 20%; height: 20%;">
+</center><b>LOGIN</b> KARYAWAN</a>
  </div>
  <div class="login-body">
   <form action="#" method="POST">
@@ -64,12 +73,16 @@
   </div>
 <div class="box-footer text-center">
   <div>
-                    <button type="submit" class="btn btn-primary " name='submit' value='masuk'>MASUK
-          </button>
-          
+  <button type="submit" class="btn btn-primary " name='submit' value='masuk'>MASUK</button>
+          <br>
+          <br>
+          <br>
+          <small>
+            
+            <span class="small text-muted">&copy RUMAHMAKAN 2017 - 2018. All right reserved.</span>
+          </small>
                   </div>
                   </div>
-  
  </form>
  </div>
 </div>

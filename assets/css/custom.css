@@ -1,7 +1,7 @@
  
  body{
   color:black;
-  background-image : url("../images/bg_karyawan.jpg");
+  background-image : linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("../images/landing.jpg");
   position:relative;
   font-family: :"Times New Roman" !important;
  }
@@ -24,9 +24,7 @@
     margin-left: auto;
     border-right: 1px solid grey;
     border-left: 1px solid grey;
-    padding: 50px 30px 45px 30px;
     border-radius: 5px;
-    box-shadow: 0 5px 5px #F003;
   }
 .login-header,.navbar-header {
  font-size:35px;
