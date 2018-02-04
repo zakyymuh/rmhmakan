@@ -9,8 +9,8 @@
    		die('Maaf koneksi gagal: '. $cnt->connect_error);
 
 	define('url', "http://localhost/rmhmakan/");
-	define('DEBUG', true);
-	//define('DEBUG', false);
+	//define('DEBUG', true);
+	define('DEBUG', false);
 	if(DEBUG) {
     error_reporting(E_ALL);
     ini_set("display_errors", 1);

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include_once 'koneksi.php'; ?>
+<?php include_once '../koneksi.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -27,7 +27,7 @@
 
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="<?=url?>assets/css/themes/all-themes.css" rel="stylesheet" />
+    <link href="<?=url?>assets/css/theme-green.min.css" rel="stylesheet" />
 
      <style type="text/css">
         section.content{
@@ -36,7 +36,7 @@
     </style>
 </head>
 
-<body class="theme-light-green" >
+<body class="theme-green" >
      <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
