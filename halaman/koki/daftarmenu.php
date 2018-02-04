@@ -8,6 +8,7 @@
                 </div>
                         <div class="card" id="tugas">
                             <div class="header bg-blue">
+                                <a href="<?=url?>halaman/koki/tambah_menu.php"><i class="material-icons pull-right">add</i></a>
                                 <h2>Dafar Menu
                                 </h2>
                             </div>
