@@ -1,4 +1,3 @@
-<<<<<<< HEAD
     <?php include_once("header.php") ?>
         <section class="content">
             <div class="container-fluid">
@@ -9,7 +8,7 @@
                 </div>
                         <div class="card" id="tugas">
                             <div class="header bg-blue">
-                                <a href="<?=url?>halaman/koki/daftarmenu.php"><i class="material-icons pull-right">view_list</i></a>
+                                <a href=""><i class="material-icons pull-right">view_list</i></a>
                                 <h2>Tambah menu baru
                                 </h2>
                             </div>
@@ -20,7 +19,7 @@
                                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                                 consequat. 
                                 </p>
-                                <form action="<?=url?>aksi/menu.php?aksi=tambah" method="POST" class="form">
+                                <form action="<?=url?>aksi/menu.php?aksi=tambah"  enctype="multipart/form-data" method="POST" class="form">
                                     <div class="row clearfix">
                                 <div class="col-sm-12">
                                         <label>Nama menu</label> 
@@ -33,7 +32,7 @@
                                         <label>Deskripsi singkat</label> 
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input class="form-control" name="deskripsi" type="text">
+                                            <input name="deskripsi" class="form-control" name="deskripsi" type="text">
                                         </div>
                                     </div>
                                 </div><div class="col-sm-12">
@@ -42,9 +41,16 @@
                                         <span class="input-group-addon"><label>Rp</label>
                                         </span>
                                         <div class="form-line">
-                                            <input class="form-control" type="number" min=1000>
+                                            <input name="harga" class="form-control" type="number" min=1000>
                                         </div>
                                     </div>
+                                </div><div class="col-xs-12">
+                                     <label for="judul">Gambar</label>
+                                    <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="file" name="upfile" id="upfile" data-show-caption="false" class="file-input-custom" accept="image/*" data-show-upload="false">
+                                    </div>
+                                </div>
                                 </div>
                                  </div>
                                  <label>Bahan Makanan</label>
@@ -68,7 +74,7 @@
                                         <label>Jumlah</label> 
                                    <div class="input-group">
                                         <div class="form-line">
-                                            <input class="form-control" type="number" min="0">
+                                            <input name="jumlah[]" class="form-control" type="number" min="0">
                                         </div>
                                     </div>
                                     </div>
@@ -88,33 +94,22 @@
                                 </form>
                             </div>
                 </div> 
-=======
-<?php include_once("header.php"); ?>
-   <section class="content">
-        <div class="container-fluid">
-            
-            <!-- Basic Examples -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card js-animating-object">
-                        <div class="header">                            
->>>>>>> f2b5c512dd2629c2f6c5530a4f68ef2ed1e18959
                             
-                            <center>
-                                <h1>PESANAN</h1>
-                                <?php
-
-                                ?>
-                            </br></br></br>
-                           <button type="button" class="btn bg-green waves-effect" style="height: 80px;width: 1300px">
-                                    <div class="material-icons" style="font-size: 75px">check</div>
-                                </button> 
-                            </center>
-                        </div>
-                    </div>
+                            </div>
                 </div>
+                            <div class="footer text-center"><small>
+    © 2016 - 2017 AdminBSB - Material Design.
+    Version: 1.0.5 Edited by Rumah Makan <b>Broto</b></small> <br>&nbsp;
+    </div>
+                </div>
+               </div>
+                
             </div>
-        </div>
-    </section>
-
-<?php include_once("footer.php") ?>
+        </section>
+    <?php include_once("footer.php") ?>
+    <script type="text/javascript">
+        awal = $("#awal").html();
+        function nambah(){
+            $("#bisa_nambah").append(awal);
+        }
+    </script>

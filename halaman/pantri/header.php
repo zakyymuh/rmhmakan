@@ -2,7 +2,11 @@
 <html>
 <?php include_once("../../koneksi.php");    
     if(!session_start()) session_start();
-    ?>
+    if($_SESSION['status'] <> "pantri"){
+        $url = url;
+        header("refresh:0.1; url=$url");
+        exit;
+    }?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -19,8 +23,10 @@
     <link href="<?=url?>assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
+    <link href="<?=url?>assets/plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
+    <link href="<?=url?>assets/plugins/animate-css/animate.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
     <link href="<?=url?>assets/plugins/morrisjs/morris.css" rel="stylesheet" />
@@ -35,9 +41,10 @@
         .content{
             margin-left:15px !important;
         }
-</style>
-    <link href="<?=url?>assets/plugins/node-waves/waves.css" rel="stylesheet" />
-    <link href="<?=url?>assets/plugins/animate-css/animate.css" rel="stylesheet" />
+        .no_sd {
+            box-shadow: none !important;
+        }
+    </style>
 </head>
 <body class="theme-green">
     <nav class="navbar">
@@ -45,7 +52,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="<?=url?>halaman/koki/index.php"> Rumah Makan Broto - Koki</a>
+                <a class="navbar-brand" href="<?=url?>halaman/admin/index.php?page=beranda&sub="> Rumah Makan Broto - Pantri</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -54,10 +61,6 @@
                     <!-- #END# Call Search -->
                     <!-- Notifications -->
                      <li>
-                        <a href="<?=url?>halaman/koki/tambah_menu.php" role="button">
-                            <i class="material-icons">library_add</i>
-                        </a>
-                        </li> <li>
                         <a href="#" role="button">
                             <i class="material-icons">account_circle</i>
                         </a>

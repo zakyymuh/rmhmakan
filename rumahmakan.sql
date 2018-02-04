@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
+-- Generation Time: Feb 04, 2018 at 12:12 PM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 5.5.30
+=======
 -- Generation Time: Feb 04, 2018 at 11:17 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
+>>>>>>> 8da3263dbc3bf996ec26bc7a56ccb222a175856f
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -52,10 +58,18 @@ INSERT INTO `bahanbaku` (`id_bahan`, `nama_bahan`, `total`, `satuan`) VALUES
 --
 
 CREATE TABLE `bahan_menu` (
-  `id_bahan_menu` char(5) NOT NULL,
   `id_menu` char(5) DEFAULT NULL,
-  `id_bahan` char(5) DEFAULT NULL
+  `id_bahan` char(5) DEFAULT NULL,
+  `jumlah` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bahan_menu`
+--
+
+INSERT INTO `bahan_menu` (`id_menu`, `id_bahan`, `jumlah`) VALUES
+('M0001', 'B0002', 100),
+('M0001', 'B0004', 194);
 
 -- --------------------------------------------------------
 
@@ -70,6 +84,13 @@ CREATE TABLE `menu` (
   `harga` int(6) DEFAULT NULL,
   `foto` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`id_menu`, `nama_menu`, `deskripsi`, `harga`, `foto`) VALUES
+('M0001', 'Spagethi', 'lorem ipsum dor amet', 1977719, '04Feb2018-060411.jpg');
 
 -- --------------------------------------------------------
 
@@ -154,7 +175,6 @@ ALTER TABLE `bahanbaku`
 -- Indexes for table `bahan_menu`
 --
 ALTER TABLE `bahan_menu`
-  ADD PRIMARY KEY (`id_bahan_menu`),
   ADD KEY `id_menu` (`id_menu`),
   ADD KEY `id_bahan` (`id_bahan`);
 
