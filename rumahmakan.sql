@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2018 at 08:54 AM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 5.5.30
+-- Generation Time: Feb 04, 2018 at 11:17 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -122,7 +124,7 @@ CREATE TABLE `pesanan_menu` (
 
 CREATE TABLE `petugas` (
   `id_petugas` char(5) NOT NULL,
-  `nama_petugas` char(5) DEFAULT NULL,
+  `nama_petugas` varchar(30) DEFAULT NULL,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(34) DEFAULT NULL,
   `status` varchar(10) DEFAULT NULL
@@ -133,7 +135,10 @@ CREATE TABLE `petugas` (
 --
 
 INSERT INTO `petugas` (`id_petugas`, `nama_petugas`, `username`, `password`, `status`) VALUES
-('P0001', 'zaky', 'pantri', '4297f44b13955235245b2497399d7a93 ', 'pantri');
+('P0001', 'zaky', 'pantri', '4297f44b13955235245b2497399d7a93 ', 'pantri'),
+('P0002', 'Manager', 'Manager', 'ae94be3cd532ce4a025884819eb08c98', 'Manager'),
+('P0003', 'Pelayan', 'Pelayan', 'ac8e3cdbddddc8b8928b18cdfc0b008c', 'Pelayan'),
+('P0004', 'Koki', 'Koki', '8b3df7b807ef060d8e8a416a3ba17eae', 'Koki');
 
 --
 -- Indexes for dumped tables
@@ -188,6 +193,7 @@ ALTER TABLE `petugas`
 --
 ALTER TABLE `pesanan_menu`
   MODIFY `id_pesanan_menu` int(5) NOT NULL AUTO_INCREMENT;
+
 --
 -- Constraints for dumped tables
 --
@@ -205,6 +211,7 @@ ALTER TABLE `bahan_menu`
 ALTER TABLE `pesanan_menu`
   ADD CONSTRAINT `pesanan_menu_ibfk_1` FOREIGN KEY (`id_menu`) REFERENCES `menu` (`id_menu`),
   ADD CONSTRAINT `pesanan_menu_ibfk_2` FOREIGN KEY (`id_pesanan`) REFERENCES `pesanan` (`id_pesanan`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
