@@ -45,7 +45,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="<?=url?>halaman/admin/index.php?page=beranda&sub="> Rumah Makan Broto - Koki</a>
+                <a class="navbar-brand" href="<?=url?>halaman/koki/index.php"> Rumah Makan Broto - Koki</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -54,7 +54,7 @@
                     <!-- #END# Call Search -->
                     <!-- Notifications -->
                      <li>
-                        <a href="<?=url?>halaman/koki/tambah.php" role="button">
+                        <a href="<?=url?>halaman/koki/tambah_menu.php" role="button">
                             <i class="material-icons">library_add</i>
                         </a>
                         </li> <li>
