@@ -72,6 +72,7 @@
 		  	 	}
 		  	 	if($insert){
 		  	 		echo "<script>alert('Proses penambahan menu baru berhasil')</script>";
+		  	 		mysqli_query($c,"COMMIT");
 		  	 		$url = url."halaman/koki/index.php";
 		  	 		header("refresh:0.1; url=$url");
 					exit;
