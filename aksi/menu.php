@@ -4,7 +4,6 @@
 		$nama = htmlentities($_POST['nama'],ENT_QUOTES);
 		$deskripsi = htmlentities($_POST['deskripsi'],ENT_QUOTES);
 		$harga = htmlentities($_POST['harga'],ENT_QUOTES);
-		echo "A";
 		//hitung array
 
 		//generate kode baru
@@ -22,7 +21,6 @@
 		}
 		//
 		$now = date('Y-m-d h:i:s');
-		echo "<br>".$kode;
 
 		$folder = "../assets/uploads";
 	        $namafile_name = $_FILES['upfile']['name'];
@@ -47,21 +45,19 @@
 		                        break;
 	                    default:
 							echo "<script>alert('Mohon hanya mengirimkan file gambar saja !')</script>";
-							$url = url."halaman/koki/index.php?page=news&sub=";
-							//header("refresh:0.1; url=$url");
+							$url = url."halaman/koki/index.php";
+							header("refresh:0.1; url=$url");
 							break;
 	                }
 	            }
 	        } else {
 				echo "<script>alert('Mohon hanya mengirimkan file gambar saja !')</script>";
-				$url = url."halaman/admin/tambah_news.php?page=news&sub=";
+				$url = url."halaman/koki/index.php";
 				echo "<script>window.location.replace('".$url."')</script>";
 				exit;
 	        }
 	       $gambar = $data['foto'];
 	   }else{$gambar = "default.jpg";}
-	   //
-	   echo "<br>".$gambar;
 	   mysqli_query($c,"START TRANSACTION");
 			$insert = mysqli_query($c,"INSERT INTO menu VALUES ('$kode','$nama','$deskripsi','$harga','$gambar')");
 			if($insert){
@@ -72,22 +68,26 @@
 		  	 		$id_bahan = $bahan[$i - 1];
 		  	 		$j = $jumlah[$i - 1];
 					$insert = mysqli_query($c,"INSERT INTO bahan_menu VALUES ('$kode','$id_bahan','$j')");
-					echo "INSERT INTO bahan_menu VALUES ('$kode','$id_bahan','$j')";
+					
 		  	 	}
 		  	 	if($insert){
-		  	 		echo "<script>alert('Proses penambahan bahan baku gagal, cobalah beberapa saat lagi !')</script>";
-		  	 		//$url = url."halaman/koki/";
+		  	 		echo "<script>alert('Proses penambahan menu baru berhasil')</script>";
+		  	 		$url = url."halaman/koki/index.php";
 		  	 		header("refresh:0.1; url=$url");
 					exit;
 		  	 	}else{
-		  	 		echo "<script>alert('Proses penambahan bahan baku gagal, cobalah beberapa saat lagi !')</script>";
-		  	 		//$url = url."halaman/koki/";
+		  	 		echo "<script>alert('Proses penambahan menu baru gagal, cobalah beberapa saat lagi !')</script>";
+		  	 		$url = url."halaman/koki/tambah_menu.php";
 		  	 		header("refresh:0.1; url=$url");
 					exit;
 		  	 	}
-			}else{
-				echo mysqli_error($c);
-			}
+		  	 }else{
+
+		  	 		echo "<script>alert('Proses penambahan bahan baku gagal, cobalah beberapa saat lagi !')</script>";
+		  	 		$url = url."halaman/koki/tambah_menu.php";
+		  	 		header("refresh:0.1; url=$url");
+					exit;
+		  	 }
 			/*
 	  	 	if(mysqli_error($c)){
 	  	 		echo "<script>alert('Proses penambahan bahan baku gagal, cobalah beberapa saat lagi !')</script>";
