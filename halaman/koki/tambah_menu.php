@@ -8,7 +8,7 @@
                 </div>
                         <div class="card" id="tugas">
                             <div class="header bg-blue">
-                                <a href=""><i class="material-icons pull-right">view_list</i></a>
+                                <a href="<?=url?>halaman/koki/daftarmenu.php"><i class="material-icons pull-right">view_list</i></a>
                                 <h2>Tambah menu baru
                                 </h2>
                             </div>
