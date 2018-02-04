@@ -36,23 +36,25 @@
                                     <tbody>
                                        <?php 
                                         $no = 1;
-                                        $get = mysqli_query($c,"SELECT * FROM hasil h JOIN calon_anggota c USING(id_pendaftar) ORDER by id_pendaftar DESC");
+                                        $get = mysqli_query($c,"SELECT * FROM menu ORDER by id_menu DESC");
                                         while ($row = mysqli_fetch_array($get)){
-                                            $nama = $row['nama'];
-                                            $tgl_lahir = $row['tgl_lahir'];
-                                            $jk = $row['jk'];
-                                            $nim = $row['NIM'];
+                                            $nama = $row['nama_menu'];
+                                            $gambar = $row['foto'];
+                                            $harga = $row['harga'];
                                             echo "<tr>";
                                             echo "<td>$no</td>";
-                                            echo "<td>$nim</td>";
+                                            echo "<td>
+                                                    <img src=".url."/assets/uploads/".$gambar." height=60px>
+                                                </td>";
                                             echo "<td>$nama</td>";
-                                            echo "<td>$jk</td>";
-                                            echo "<td>$tgl_lahir</td></tr>";
+                                            echo "<td>$harga</td>";
+                                            echo "<td align='center'><button class='btn btn-flat btn-danger'> Hapus </button></td></tr>";
                                             $no++;
                                         } 
                                         ?>
                                        
                                     </tbody>
+
                                 </table>
                             </div>
                         </div>
