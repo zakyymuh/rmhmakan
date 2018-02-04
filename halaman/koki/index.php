@@ -5,16 +5,12 @@
             
             <!-- Basic Examples -->
             <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card js-animating-object">
-                        <div class="header">                           
-                            
-                            <center>
-                                <h1>PESANAN</h1>
-                                <?php
-
-                                ?>
-                            </br></br></br>
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 ">
+                    <div class="card">
+                        <div class="header text-center"> 
+                                <h3>PESANAN</h3>
+                            </div>
+                            <div class="body">
                            <button type="button" class="btn bg-green waves-effect" style="height: 80px;width: 100%">
                                     <div class="material-icons" style="font-size: 75px">check</div>
                                 </button> 

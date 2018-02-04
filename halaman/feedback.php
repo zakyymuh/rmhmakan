@@ -18,21 +18,6 @@
 </head>
 
 <body class="login-page">
-     <div class="page-loader-wrapper">
-        <div class="loader">
-            <div class="preloader">
-                <div class="spinner-layer pl-red">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <p>Mohon Tunggu ...</p>
-        </div>
-    </div>
     <div class="login-box">
         <div class="logo">
             </br></br></br>
@@ -51,7 +36,7 @@
                  	<div class="material-icons" style="font-size: 60px ; margin-top : 10px">sentiment_very_dissatisfied</div>   
                  </button></br></br>
                  <table>
-                    <tr><td width="73%" height="80%" style="font-size: 20px">Yaaa<td style="font-size: 20px">Tidak
+                    <tr><td width="73%" height="80%" style="font-size: 20px">&nbsp;Ya&nbsp;&nbsp;<td style="font-size: 20px">Tidak
                 </table>
                  </center></br>
                  
