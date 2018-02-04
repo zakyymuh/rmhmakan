@@ -1,6 +1,7 @@
 $(function () {
     $('.js-basic-example').DataTable({
-        responsive: true
+        responsive: true,
+        bLengthChange:false
     });
 
     //Exportable table

@@ -40,7 +40,7 @@ function showBasicMessage() {
 }
 
 function showWarningLogin() {
-    swal("Login Gagal", "Mohon cek kembali username dan password anda ", "error");
+    swal("Login Gagal", "Mohon cek kembali nama pengguna dan kata sandi anda ", "error");
 }
 function showWithTitleMessage() {
     swal("Here's a message!", "It's pretty, isn't it?");
