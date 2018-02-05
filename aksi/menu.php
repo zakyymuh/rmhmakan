@@ -125,6 +125,26 @@
 				exit;
 				
 		}
+	}elseif ($_GET['aksi'] == "hapusmenu") {
+		$id = $_GET['id_menu'];
+		mysqli_query($c,"START TRANSACTION");
+		mysqli_query($c,"DELETE FROM pesanan_menu WHERE id_menu = '$id'");
+		mysqli_query($c,"DELETE FROM bahan_menu WHERE id_menu = '$id'");
+		$query = mysqli_query($c,"DELETE FROM menu WHERE id_menu = '$id'");
+		 	if(mysqli_error($c)){
+	  	 		echo "<script>alert('Proses penghapusan menu gagal, cobalah beberapa saat lagi !')</script>";
+				$url = url."halaman/koki/daftarmenu.php";
+				header("refresh:0.1; url=$url");
+				exit;
+	  	 	}
+	  	 	else{
+		 		mysqli_query($c,"COMMIT");
+	  	 		echo "<script>alert('Proses penghapusan menu berhasil !')</script>";
+				$url = url."halaman/koki/daftarmenu.php";
+				header("refresh:0.1; url=$url");
+				exit;
+				
+		}
 	}elseif($_GET['aksi'] == "edit"){
 		$id = $_GET['id_bahan'];
 		$nama = htmlentities($_POST['nama'],ENT_QUOTES);

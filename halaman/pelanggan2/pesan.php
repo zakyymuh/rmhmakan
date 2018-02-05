@@ -51,7 +51,7 @@
                           ?>  
                      </table>
                        <div class="footer text-center"><br>
-                     <button class="btn btn-info btn-float text-center"> MENUNGGU </button>
+                     <a href="<?=url?>halaman/pelanggan2/pembayaran.php?id_pesanan=<?=$id_pesanan;?>"><button class="btn btn-info btn-float text-center">&nbsp;&nbsp;&nbsp;BAYAR&nbsp;&nbsp;&nbsp; </button></a>
                      </div>
                 </div>  
                 </div>  

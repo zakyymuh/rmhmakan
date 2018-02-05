@@ -40,6 +40,7 @@
                                         $get = mysqli_query($c,"SELECT * FROM menu ORDER by id_menu DESC");
                                         while ($row = mysqli_fetch_array($get)){
                                             $nama = $row['nama_menu'];
+                                            $id_menu = $row['id_menu'];
                                             $gambar = $row['foto'];
                                             $harga = $row['harga'];
                                             echo "<tr>";
@@ -49,7 +50,13 @@
                                                 </td>";
                                             echo "<td>$nama</td>";
                                             echo "<td>Rp $harga</td>";
-                                            echo "<td align='center'><button class='btn btn-flat btn-danger'> Hapus </button></td></tr>";
+                                            ?>
+                                                <td align='center'>
+                                            <a href="<?=url?>aksi/menu.php?aksi=hapusmenu&id_menu=<?=$id_menu;?>">
+                                                    <button class='btn btn-flat btn-danger'> Hapus </button>
+                                            </a>    </td>
+                                            </tr>
+                                            <?php
                                             $no++;
                                         } 
                                         ?>
