@@ -6,7 +6,7 @@
 	$c = new mysqli($dOk1,$Y22Y1,$Km1b,$LlaP);
 	
 	if ($c->connect_error)
-   		die('Maaf koneksi gagal: '. $cnt->connect_error);
+   		die('Maaf koneksi gagal: '. $c->connect_error);
 
 	define('url', "http://localhost/rmhmakan/");
 	//define('DEBUG', true);

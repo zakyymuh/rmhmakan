@@ -25,7 +25,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      
+                                      <?php 
+                                            $no = 1;
+                                            $id_petugas = $_SESSION['id_petugas'];
+                                            $get = mysqli_query($c,"SELECT * FROM penugasan WHERE id_petugas = '$id_petugas' order by id_penugasan DESC");
+                                            while($row = mysqli_fetch_array($get)){
+                                                echo "<tr>";
+                                                echo "<td>$no</td>";
+                                                echo "<td>".$row['jenis']."</td>";
+                                                echo "<td>".$row['waktu']."</td></tr>";
+                                            }
+                                       ?>
                                     </tbody>
                                 </table>
                             </div>

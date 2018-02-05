@@ -1,6 +1,6 @@
 <?php
 	require "../koneksi.php";
-	//if($_POST['username'] && $_POST['password']){
+	if($_POST['username'] && $_POST['password']){
 	$username = htmlentities($_POST['username'],ENT_QUOTES);
 	$password = md5(htmlentities($_POST['password'],ENT_QUOTES));
 	$get = mysqli_query($c,"SELECT * FROM petugas WHERE username = '$username' and password = '$password'");
@@ -29,4 +29,5 @@
 		$result['message'] = "gagal";	
 	} //*/
 	echo json_encode($result);
+}
 ?>

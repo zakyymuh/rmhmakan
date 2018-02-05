@@ -44,11 +44,11 @@
                                             $harga = $row['harga'];
                                             echo "<tr>";
                                             echo "<td>$no</td>";
-                                            echo "<td>
+                                            echo "<td class='text-center'>
                                                     <img src=".url."/assets/uploads/".$gambar." height=60px>
                                                 </td>";
                                             echo "<td>$nama</td>";
-                                            echo "<td>$harga</td>";
+                                            echo "<td>Rp $harga</td>";
                                             echo "<td align='center'><button class='btn btn-flat btn-danger'> Hapus </button></td></tr>";
                                             $no++;
                                         } 
