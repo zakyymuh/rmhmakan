@@ -50,11 +50,11 @@
     $getmaxkode = mysqli_fetch_row(mysqli_query($c,"SELECT max(right(id_pesanan,4)) FROM pesanan"));
     $max = $getmaxkode['0'] + 1;
     if($max <= 9){
-      $kode = "P000".$max;
+      $kode = "O000".$max;
     }elseif($max > 9 && $max <= 99){
-      $kode = "P00".$max;
+      $kode = "O00".$max;
     }else{
-      $kode = "P0".$max;
+      $kode = "O0".$max;
     }
     //isi dulu bahan kode, baru total nanti, kalo tidak mungkin update
       $total = 0;  
@@ -64,7 +64,8 @@
       }   
        mysqli_query($c,"START TRANSACTION");
        $now = date('Y-m-d h:i:s');
-    if(mysqli_query($c,"INSERT INTO pesanan VALUES ('$kode','1','$total','$now','menunggu')")){
+       $id_meja= $_SESSION['id_petugas'];
+    if(mysqli_query($c,"INSERT INTO pesanan VALUES ('$kode','$id_meja','$total','$now','menunggu')")){
 
         foreach($_SESSION["shopping_cart"] as $keys => $values)  
               {  

@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Feb 2018 pada 03.32
--- Versi Server: 10.1.10-MariaDB
--- PHP Version: 5.5.30
+-- Generation Time: Feb 05, 2018 at 04:41 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bahanbaku`
+-- Table structure for table `bahanbaku`
 --
 
 CREATE TABLE `bahanbaku` (
@@ -34,19 +36,25 @@ CREATE TABLE `bahanbaku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `bahanbaku`
+-- Dumping data for table `bahanbaku`
 --
 
 INSERT INTO `bahanbaku` (`id_bahan`, `nama_bahan`, `total`, `satuan`) VALUES
-('B0001', 'Minyak', 100, 'Liter'),
-('B0002', 'Aci', 200, 'kg'),
-('B0003', 'Kayu Bakar 2', 413, 'kg'),
-('B0004', 'Cimin', 25, 'Kg');
+('B0001', 'Pasta', 50, 'kg'),
+('B0002', 'Telur', 30, 'Kg'),
+('B0003', 'Bawang Putih', 90, 'Kg'),
+('B0004', 'Olive Oil', 45, 'Liter'),
+('B0005', 'Tomat', 30, 'Kg'),
+('B0006', 'Wortel', 20, 'Kg'),
+('B0007', 'Susu', 12, 'Liter'),
+('B0008', 'Basil', 1, 'Kg'),
+('B0009', 'Keju', 12, 'Kg'),
+('B0010', 'Daging Sapi', 33, 'Kg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bahan_menu`
+-- Table structure for table `bahan_menu`
 --
 
 CREATE TABLE `bahan_menu` (
@@ -56,7 +64,7 @@ CREATE TABLE `bahan_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `bahan_menu`
+-- Dumping data for table `bahan_menu`
 --
 
 INSERT INTO `bahan_menu` (`id_menu`, `id_bahan`, `jumlah`) VALUES
@@ -64,12 +72,29 @@ INSERT INTO `bahan_menu` (`id_menu`, `id_bahan`, `jumlah`) VALUES
 ('M0001', 'B0003', 12),
 ('M0002', 'B0004', 2),
 ('M0003', 'B0001', 3),
-('M0004', 'B0003', 20);
+('M0004', 'B0003', 20),
+('M0003', 'B0002', 0),
+('M0003', 'B0002', 0),
+('M0001', 'B0008', 0),
+('M0002', 'B0009', 2),
+('M0002', 'B0002', 3),
+('M0001', 'B0003', 1),
+('M0001', 'B0004', 1),
+('M0001', 'B0001', 0),
+('M0002', 'B0008', 1),
+('M0002', 'B0010', 1),
+('M0002', 'B0001', 1),
+('M0002', 'B0006', 1),
+('M0002', 'B0005', 1),
+('M0003', 'B0002', 1),
+('M0003', 'B0009', 1),
+('M0003', 'B0007', 1),
+('M0003', 'B0001', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `menu`
+-- Table structure for table `menu`
 --
 
 CREATE TABLE `menu` (
@@ -81,19 +106,18 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `menu`
+-- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`id_menu`, `nama_menu`, `deskripsi`, `harga`, `foto`) VALUES
-('M0001', 'Susu coklat', 'susu asli dua kelinci yang sanggaatt melegenda', 19995, '04Feb2018-110628.jpg'),
-('M0002', 'Jeruk', 'Jeruk adalah jeruk purut yang jeruk', 30000, '04Feb2018-112243.jpg'),
-('M0003', 'Ayam bakaka hahaha', 'ayam adalah bakak cinta yang asri', 29000, '04Feb2018-112318.jpg'),
-('M0004', 'Ayam Ketawa', 'ayam ini gapernah berheti ketawa, bahkan sampai mau mati', 32000, '05Feb2018-122826.jpg');
+('M0001', 'aglio &amp; Olio', 'Bawang Putih dan Minyak', 40000, '05Feb2018-103736.jpg'),
+('M0002', 'Bolognese', 'Saus Bolognise, daging, tomat, wortel dan basil', 50000, '05Feb2018-103906.jpg'),
+('M0003', 'Carbonara', 'saus telur, keju dan daging', 50000, '05Feb2018-104006.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penugasan`
+-- Table structure for table `penugasan`
 --
 
 CREATE TABLE `penugasan` (
@@ -104,43 +128,41 @@ CREATE TABLE `penugasan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `penugasan`
+-- Dumping data for table `penugasan`
 --
 
 INSERT INTO `penugasan` (`id_penugasan`, `id_petugas`, `jenis`, `waktu`) VALUES
 (17, 'P0004', 'antar', '2018-02-05 06:27:00'),
 (18, 'P0004', 'antar', '2018-02-05 06:40:37'),
 (19, 'P0004', 'antar', '2018-02-05 06:41:15'),
-(20, 'P0004', 'antar', '2018-02-05 08:19:21');
+(20, 'P0004', 'antar', '2018-02-05 08:19:21'),
+(21, 'P0005', 'antar', '2018-02-05 10:01:22');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pesanan`
+-- Table structure for table `pesanan`
 --
 
 CREATE TABLE `pesanan` (
   `id_pesanan` char(5) NOT NULL,
-  `no_meja` varchar(2) NOT NULL,
+  `no_meja` char(5) NOT NULL,
   `total` int(11) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pesanan`
+-- Dumping data for table `pesanan`
 --
 
 INSERT INTO `pesanan` (`id_pesanan`, `no_meja`, `total`, `tanggal`, `status`) VALUES
-('P0010', '1', 30000, '2018-02-04 17:00:00', 'antar'),
-('P0011', '1', 158975, '2018-02-04 18:06:48', 'antar'),
-('P0012', '1', 323975, '2018-02-04 18:08:51', 'antar'),
-('P0013', '1', 294980, '2018-02-04 18:09:42', 'antar');
+('O0001', 'P0005', 19995, '2018-02-05 03:00:19', 'antar');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pesanan_menu`
+-- Table structure for table `pesanan_menu`
 --
 
 CREATE TABLE `pesanan_menu` (
@@ -151,7 +173,7 @@ CREATE TABLE `pesanan_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pesanan_menu`
+-- Dumping data for table `pesanan_menu`
 --
 
 INSERT INTO `pesanan_menu` (`id_pesanan_menu`, `id_menu`, `id_pesanan`, `jumlah`) VALUES
@@ -162,12 +184,14 @@ INSERT INTO `pesanan_menu` (`id_pesanan_menu`, `id_menu`, `id_pesanan`, `jumlah`
 (15, 'M0001', 'P0013', 4),
 (16, 'M0002', 'P0013', 3),
 (17, 'M0003', 'P0013', 1),
-(18, 'M0004', 'P0013', 3);
+(18, 'M0004', 'P0013', 3),
+(19, 'M0001', 'P0014', 1),
+(20, 'M0001', 'O0001', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `petugas`
+-- Table structure for table `petugas`
 --
 
 CREATE TABLE `petugas` (
@@ -179,14 +203,17 @@ CREATE TABLE `petugas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `petugas`
+-- Dumping data for table `petugas`
 --
 
 INSERT INTO `petugas` (`id_petugas`, `nama_petugas`, `username`, `password`, `status`) VALUES
 ('P0001', 'zaky', 'pantri', '4297f44b13955235245b2497399d7a93 ', 'pantri'),
 ('P0002', 'Manager', 'manager', '4297f44b13955235245b2497399d7a93 ', 'manager'),
 ('P0003', 'Pelayan', 'pelayan', '4297f44b13955235245b2497399d7a93 ', 'pelayan'),
-('P0004', 'Koki', 'koki', '4297f44b13955235245b2497399d7a93 ', 'koki');
+('P0004', 'Koki', 'koki', '4297f44b13955235245b2497399d7a93 ', 'koki'),
+('P0005', 'Meja1', 'Meja1', 'a271098719e7d62523a64c734135f401', 'Meja'),
+('P0006', 'Meja2', 'Meja2', '21ee76715c8eb61b3b318412cb1e7a78', 'Meja'),
+('P0007', 'Meja3', 'Meja3', '5a734e923c74378d58d594446cacfa43', 'Meja');
 
 --
 -- Indexes for dumped tables
@@ -246,35 +273,38 @@ ALTER TABLE `petugas`
 -- AUTO_INCREMENT for table `penugasan`
 --
 ALTER TABLE `penugasan`
-  MODIFY `id_penugasan` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_penugasan` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
 -- AUTO_INCREMENT for table `pesanan_menu`
 --
 ALTER TABLE `pesanan_menu`
-  MODIFY `id_pesanan_menu` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_pesanan_menu` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `bahan_menu`
+-- Constraints for table `bahan_menu`
 --
 ALTER TABLE `bahan_menu`
   ADD CONSTRAINT `bahan_menu_ibfk_1` FOREIGN KEY (`id_menu`) REFERENCES `menu` (`id_menu`),
   ADD CONSTRAINT `bahan_menu_ibfk_2` FOREIGN KEY (`id_bahan`) REFERENCES `bahanbaku` (`id_bahan`);
 
 --
--- Ketidakleluasaan untuk tabel `penugasan`
+-- Constraints for table `penugasan`
 --
 ALTER TABLE `penugasan`
   ADD CONSTRAINT `penugasan_ibfk_1` FOREIGN KEY (`id_petugas`) REFERENCES `petugas` (`id_petugas`);
 
 --
--- Ketidakleluasaan untuk tabel `pesanan_menu`
+-- Constraints for table `pesanan_menu`
 --
 ALTER TABLE `pesanan_menu`
   ADD CONSTRAINT `pesanan_menu_ibfk_1` FOREIGN KEY (`id_menu`) REFERENCES `menu` (`id_menu`),
   ADD CONSTRAINT `pesanan_menu_ibfk_2` FOREIGN KEY (`id_pesanan`) REFERENCES `pesanan` (`id_pesanan`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

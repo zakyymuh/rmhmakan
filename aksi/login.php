@@ -20,6 +20,8 @@
 		}
 		elseif ($data['status'] == "manager") {
 		$result['url'] = "halaman/manager.php";
+		}elseif ($data['status'] == "Meja") {
+		$result['url'] = "halaman/pelanggan2/index.php";
 		}
 		else{
 		$result['url'] = "halaman/koki/index.php";

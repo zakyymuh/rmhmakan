@@ -14,10 +14,7 @@
                             </div>
                             <div class="body">
                                 <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. 
+                                Silahkan tambah menu baru beserta dengan bahan-bahan yang digunakan!
                                 </p>
                                 <form action="<?=url?>aksi/menu.php?aksi=tambah"  enctype="multipart/form-data" method="POST" class="form">
                                     <div class="row clearfix">

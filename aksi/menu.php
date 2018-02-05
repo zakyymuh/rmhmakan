@@ -46,14 +46,19 @@
 	                    default:
 							echo "<script>alert('Mohon hanya mengirimkan file gambar saja !')</script>";
 							$url = url."halaman/koki/index.php";
-							header("refresh:0.1; url=$url");
+							//header("refresh:0.1; url=$url");
 							break;
 	                }
 	            }
 	        } else {
 				echo "<script>alert('Mohon hanya mengirimkan file gambar saja !')</script>";
+							echo "A";
+
+	       echo $namafile_name = $_FILES['upfile']['name'];
+	      echo $namafile_type = $_FILES['upfile']['type'];
+	        $namafile_size = $_FILES['upfile']['size'];
 				$url = url."halaman/koki/index.php";
-				echo "<script>window.location.replace('".$url."')</script>";
+				//echo "<script>window.location.replace('".$url."')</script>";
 				exit;
 	        }
 	       $gambar = $data['foto'];
